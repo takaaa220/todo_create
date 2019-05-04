@@ -22,7 +22,7 @@ get "/" do
   end
 end
 
-# TODO: 変更する
+# TODO: 変更しましょう
 post "/payload" do
   body = JSON.parse(params[:payload])
   diff_url = body["compare"] + ".diff"
@@ -37,9 +37,10 @@ post "/payload" do
 
   included_todo = added_diff.select { |diff| diff.include?("TODO: ") }
 
-  included_todo.map do |todo|
-    included_todo.gsub(/.*TODO: /, "")
+  todos = included_todo.map do |todo|
+    URI.decode(todo.gsub(/.*TODO: /, ""))
   end
 
-  p included_todo
+  # TODO: Issue作成する
+  p todos
 end
