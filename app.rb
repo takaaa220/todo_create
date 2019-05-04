@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'json'
 require 'net/http'
-require 'url'
+require 'uri'
 
 get "/" do
   "hello"
