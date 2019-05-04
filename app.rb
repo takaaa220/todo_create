@@ -22,7 +22,7 @@ get "/" do
   end
 end
 
-# TODO: あとで変更する
+# TODO: 変更する
 post "/payload" do
   body = JSON.parse(params[:payload])
   diff_url = body["compare"] + ".diff"
