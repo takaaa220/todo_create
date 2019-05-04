@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'json'
 require 'net/http'
 require 'uri'
+require 'pry'
 
 get "/" do
   "hello"
@@ -10,6 +11,7 @@ end
 
 post "/payload" do
   body = JSON.parse(params[:payload])
+  binding.pry
   diff_url = body["compare"] + ".diff"
   uri = URI.parse(diff_url)
   response_body = NET::HTTP.get_response(uri).body
