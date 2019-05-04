@@ -38,9 +38,9 @@ post "/payload" do
   included_todo = added_diff.select { |diff| diff.include?("TODO: ") }
 
   todos = included_todo.map do |todo|
-    URI.decode(todo.gsub(/.*TODO: /, ""))
+    URI.decode(todo.gsub(/.*TODO: /, "")).force_encoding("UTF-8")
   end
 
-  # TODO: Issue作成する
+  # TODO: Issue作成する必要あり
   p todos
 end
