@@ -3,7 +3,7 @@ require 'sinatra/reloader' if development?
 require 'json'
 require 'net/http'
 require 'uri'
-require 'pry'
+require 'pry' if development?
 
 get "/" do
   "hello"
