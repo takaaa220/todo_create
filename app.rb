@@ -7,5 +7,5 @@ get "/" do
 end
 
 post "/payload" do
-  "post"
+  p request.body.read
 end
