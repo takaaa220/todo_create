@@ -41,6 +41,6 @@ post "/payload" do
     URI.decode(todo.gsub(/.*TODO: /, "")).force_encoding("UTF-8")
   end
 
-  # TODO: Issue作成する必要あり
+  # TODO: create issue
   p todos
 end
