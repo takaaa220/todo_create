@@ -9,7 +9,7 @@ get "/" do
   "hello"
 end
 
-# TODO: 変更します
+# TODO: 変更しようね
 post "/payload" do
   body = JSON.parse(params[:payload])
   repo_name = body["repository"]["full_name"]
