@@ -53,6 +53,7 @@ post "/payload" do
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
   req = Net::HTTP::Post.new(uri.path)
+  req.basic_auth(ENV["GITID"], ENV["GITPASS"])
 
   # TODO: 認証必要あり？
   issues.each do |issue|
