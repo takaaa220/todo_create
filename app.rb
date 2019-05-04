@@ -5,3 +5,7 @@ require 'json'
 get "/" do
   "hello"
 end
+
+post "/payload" do
+  "post"
+end
