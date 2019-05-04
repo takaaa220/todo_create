@@ -26,7 +26,7 @@ post "/payload" do
 
   issue_url = "https://api.github.com/repos/#{repo_name}/issues"
   included_todo.each do |todo|
-    # TODO: Parseもっとちゃんとする
+    # TODO: Parseちゃんとする
     todo = URI.decode(todo.gsub(/.*TODO: /, "")).force_encoding("UTF-8")
 
     uri = URI.parse(issue_url)
