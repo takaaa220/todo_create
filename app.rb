@@ -9,7 +9,7 @@ get "/" do
 end
 
 post "/payload" do
-  body = JSON.parse(request.body.read)
+  body = JSON.parse(params[:payload])
   diff_url = body["compare"] + ".diff"
   uri = URI.parse(diff_url)
   response_body = NET::HTTP.get_response(uri).body
